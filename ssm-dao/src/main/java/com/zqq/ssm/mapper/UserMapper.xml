@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.ssm.mapper.UserMapper">
+    <select id="findAllUser" resultType="user">
+        SELECT * FROM user
+    </select>
+    <select id="findUserById" resultType="user" parameterType="int">
+        SELECT  * FROM user WHERE userid = #{userid}
+    </select>
+    <update id="updateUser" parameterType="user">
+        UPDATE  user SET username = #{username},password = #{password}
+        WHERE userid = #{userid}
+    </update>
+</mapper>
