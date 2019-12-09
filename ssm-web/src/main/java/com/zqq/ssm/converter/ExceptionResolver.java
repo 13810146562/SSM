@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ExceptionResolver implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
-        UserException userException = null;
+        UserException userException;
         //解析异常类型
         if(e instanceof UserException)
             userException = (UserException) e;
