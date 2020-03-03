@@ -4,12 +4,13 @@ import com.zqq.ssm.group.ValidGroup1;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 /**
  * @Author zqq
  * @Date 2019/10/22  15:10
  */
-public class User {
+public class User implements Serializable {
     private Long userid;
     //校验名称在1--30字符之间
     @Size(min = 3, max = 30, message = "{user.username.length.error}",groups = {ValidGroup1.class})

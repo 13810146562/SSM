@@ -32,6 +32,13 @@
 </table>
 <input type="button" value="json" id="jsons">
 <input type="button" value="json1" id="jsons1">
+<br>
+<a href="<c:url value="/excel/downUserExcel.action"/>" onclick="return null;">导出用户信息</a>
+<br>
+<form action="<c:url value="/excel/addUserByExcel.action"/> " method="post" enctype="multipart/form-data">
+    <input type="file" id="userExcel" name="userExcel" placeholder="请导入xls或xlsx格式文件"><br>
+    <input type="submit" value="上传" onclick="return checkData()">
+</form>
 <script src="<c:url value="/jquery/jquery-3.4.1.min.js"/> "></script>
 <script>
     $(function () {
@@ -58,7 +65,22 @@
                 }
             });
         });
+
+
     });
+function checkData() {
+    const fileDir = $("#userExcel").val();
+    const suffix = fileDir.substr(fileDir.lastIndexOf("."));
+        if("" === fileDir){
+            alert("请选择要导入的Excel文件");
+            return false;
+        }
+        if(".xls" !== suffix && ".xlsx" !== suffix){
+            alert("文件格式不正确");
+            return false;
+        }
+        return true;
+}
 </script>
 </body>
 </html>
