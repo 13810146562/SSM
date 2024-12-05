@@ -15,7 +15,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <spring.version>5.0.7.RELEASE</spring.version>
+        <spring.version>5.2.3.RELEASE</spring.version>
         <mybatis.version>3.2.7</mybatis.version>
         <log4j2.version>2.9.1</log4j2.version>
     </properties>
